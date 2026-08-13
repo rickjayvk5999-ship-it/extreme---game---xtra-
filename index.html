@@ -113,78 +113,7 @@
   <script src="script.js"></script>
 
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
 
-    const cards = document.querySelectorAll(".game-card");
-
-    cards.forEach(function (card) {
-
-        card.addEventListener("click", function () {
-
-            // Get the game name
-            const titleElement = card.querySelector("h3");
-            const gameName = titleElement
-                ? titleElement.textContent.trim()
-                : "Game";
-
-            // Create popup
-            const popup = document.createElement("div");
-
-            popup.innerHTML = `
-                <div style="
-                    position:fixed;
-                    inset:0;
-                    background:rgba(0,0,0,0.85);
-                    display:flex;
-                    align-items:center;
-                    justify-content:center;
-                    z-index:9999;
-                    padding:20px;
-                ">
-                    <div style="
-                        background:#111;
-                        border:2px solid #ff2020;
-                        padding:30px;
-                        max-width:400px;
-                        width:100%;
-                        text-align:center;
-                        color:white;
-                        font-family:Arial,sans-serif;
-                    ">
-                        <h2 style="color:#ff2020;">
-                            ${gameName}
-                        </h2>
-
-                        <p>
-                            You selected ${gameName}.
-                        </p>
-
-                        <button id="closeGamePopup" style="
-                            background:#ff2020;
-                            color:white;
-                            border:0;
-                            padding:12px 25px;
-                            cursor:pointer;
-                            font-weight:bold;
-                        ">
-                            CLOSE
-                        </button>
-                    </div>
-                </div>
-            `;
-
-            document.body.appendChild(popup);
-
-            document.getElementById("closeGamePopup")
-                .addEventListener("click", function () {
-                    popup.remove();
-                });
-        });
-    });
-
-});
-                              </script> 
 <a href="ninja-storm.html" class="game-card">
     <!-- your Ninja Storm card content here -->
 </a> </body>
